@@ -1,0 +1,94 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import SocialPill from "../components/icons/SocialPill.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import BriefCase from "../components/icons/BriefCase.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<Layout
+	title="Portfolio of Tano - Web Developer and Programmer"
+	description="Hire Tano to create your web or mobile application.web developer and graphic designer. Specialized in creating unique applications."
+>
+	<main class="px-4">
+		<SectionContainer id="sobre-mi" class="py-44 pb-32">
+			<img
+				class="rounded-full size-12 mb-4"
+				src="/tano_photo.png"
+				alt="tano-photo"
+			/>
+			<h1
+				class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+			>
+				Hey, I'm Tano Aleu <div
+					class="flex justify-center items-center"
+				>
+					<a
+						href="https://www.linkedin.com/in/tano-aleu/"
+						target="_blank"
+						rel="noopener"
+						class="flex justify-center items-center"
+						><Badge>Available to work</Badge>
+					</a>
+				</div>
+			</h1>
+
+			<h2 class="text-white text-xl lg:text-2xl text-wrap max-w-[700px]">
+				<span>
+					+2 years of experience.
+					<span class="text-yellow-200/90"
+						>Fullstack Web Developer and Graphic Designer.</span
+					>
+					<span class="text-red-200/90"
+						>From Cadiz, Spain but currently living in Kassel,
+						Germany.</span
+					>
+					<span class="opacity-75"
+						>Specialised in creating unique applications.
+					</span>
+				</span>
+			</h2>
+
+			<nav class="text-white flex gap-4 mt-8 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/tano-aleu/">
+					<LinkedInIcon class="size-4 md:size-6" />
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/TanoAlmost">
+					<GitHubIcon class="size-4 md:size-6" />
+					GitHub
+				</SocialPill>
+				<SocialPill href="mailto:c.aleu.mosteiro@gmail.com">
+					<MailIcon class="size-4 md:size-6" />
+					c.aleu.mosteiro@gmail.com
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2
+				class="text-white text-3xl font-semibold mb-6 flex gap-x-3 items-center"
+			>
+				<BriefCase class="size-7" />
+				Work Experience
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2
+				class="text-white text-3xl font-semibold mb-6 flex gap-x-3 items-center"
+			>
+				<CodeIcon class="size-7" />
+				Projects
+			</h2>
+			<Projects />
+		</SectionContainer>
+	</main>
+</Layout>

@@ -1,0 +1,72 @@
+---
+import React from "./icons/React.astro";
+import Tailwind from "./icons/Tailwind.astro";
+
+const TAGS = {
+    REACT: {
+        name: "React",
+        class: "text-[#73bcf6]",
+        icon: React,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "text-[#73bcf6]",
+        icon: Tailwind,
+    },
+};
+
+const PROJECTS = [
+    {
+        title: "Synqple App",
+        description:
+            "Synqple App is an Audio Web App that offers users a DJ-like experience with analogue turntables, such as Technics, enabling precise synchronisation of music. The platform is equipped with all the essential tools a DJ needs to mix and sync audio tracks in real time.",
+        link: "https://synqpleappbeta.netlify.app/",
+        github: "https://github.com/TanoAlmost",
+        image: "/projects/synqpleapp.webp",
+        tags: [TAGS.REACT, TAGS.TAILWIND],
+    },
+];
+---
+
+{
+    PROJECTS.map(({ image, title, link, github, description, tags }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+
+            {/* <h5 class="text-2xl font-semibold text-white mb-2">{github}</h5> */}
+
+            <p class=" text-white text-s mb-2 text-pretty">{description}</p>
+
+            <h4 class="text-sm font-semibold text-white mb-4">
+                {" "}
+                <a
+                    href={link}
+                    class="text-white underline hover:text-blue-600"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {link}
+                </a>
+            </h4>
+
+            <ul class="flex gap-x-2 flex-row mb-4">
+                {tags.map((tag) => (
+                    <li>
+                        <span
+                            class={`text-white rounded-full border border-white/90 flex justify-center items-center gap-x-2 text-sm ${tag.class} py-1 px-2
+                                    flex-row items-center gap-x-2`}
+                        >
+                            <tag.icon class="size-8 " />
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img
+                class="rounded shadow-2xl shadow-white/10"
+                src={image}
+                alt={`Captura de Pantalla del Proyecto ${image}`}
+            />
+        </article>
+    ))
+}
